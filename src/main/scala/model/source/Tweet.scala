@@ -28,7 +28,6 @@ case class Tweet(
     withheld_copyright:        Option[Boolean],
     withheld_in_countries:     Option[Seq[String]])
 
-// Awaiting scala 2.11 for case classes with more than 22 parameters.
 case class TweetFull(
     contributors:              Option[Seq[Contributor]],
     coordinates:               Option[Coordinates],
@@ -48,14 +47,13 @@ case class TweetFull(
     lang:                      Option[String],
     place:                     Option[Place],
     possibly_sensitive:        Option[Boolean],
-    //    scopes:                    Map[String, Any],
-    retweet_count:         Long,
-    retweeted:             Option[Boolean],
-    retweeted_status:      Option[Tweet],
-    source:                String,
-    text:                  String,
-    truncated:             Boolean,
-    user:                  Option[UserFull],
-    withheld_copyright:    Option[Boolean],
-    withheld_in_countries: Option[Seq[String]],
-    withheld_scope:        Option[String])
+    retweet_count:             Long,
+    retweeted:                 Option[Boolean],
+    retweeted_status:          Option[Tweet],
+    source:                    String,
+    text:                      String,
+    truncated:                 Boolean,
+    user:                      Option[UserFull],
+    withheld_copyright:        Option[Boolean],
+    withheld_in_countries:     Option[Seq[String]],
+    withheld_scope:            Option[String])

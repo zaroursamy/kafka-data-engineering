@@ -48,7 +48,6 @@ object ProjectStreams extends ProjectEncoderDecoder {
 
         val records = consumer.poll(1000)
 
-
         val recordsSeq = records.asScala.toSeq
 
         val dbModel: Seq[ModelDatabase] = recordsSeq.flatMap(r ⇒ TweetSerde.fromJson(r.value())).toModelDatabase

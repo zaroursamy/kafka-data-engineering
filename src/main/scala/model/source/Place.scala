@@ -5,8 +5,6 @@ case class PlaceCoordinates(
     `type`:      String)
 
 case class Place(
-    //    attributes:   Map[String, String],
-    //    bounding_box: Option[PlaceCoordinates],
     country:      String,
     country_code: String,
     full_name:    String,
