@@ -38,6 +38,7 @@ object ProjectStreams extends ProjectEncoderDecoder {
    * @param r
    */
   def runLoop(consumer: KafkaConsumer[String, String], topic: String)(implicit modelDatabaseApi: Api[ModelDatabase], r: RedisClient): Unit = {
+    import scala.collection.JavaConverters._
 
     consumer.subscribe(java.util.Collections.singletonList(topic))
 
@@ -47,7 +48,6 @@ object ProjectStreams extends ProjectEncoderDecoder {
 
         val records = consumer.poll(1000)
 
-        import scala.collection.JavaConverters._
 
         val recordsSeq = records.asScala.toSeq
 
